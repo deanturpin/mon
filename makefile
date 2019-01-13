@@ -1,7 +1,7 @@
 all: capture
 
 crack: all.txt
-	aircrack-ng all.cap -w $<
+	aircrack-ng demo.cap -w $<
 
 merge:
 	rm -f all.cap
@@ -12,7 +12,7 @@ monitor:
 	airmon-ng start wlan0
 
 capture: monitor
-	airodump-ng wlan0mon -w lappo --manufacturer
+	airodump-ng wlan0mon -w demo --manufacturer
 
 stop:
 	airmon-ng stop wlan0mon
