@@ -8,14 +8,14 @@ merge:
 	mergecap -F pcap *.cap -w all.cap	
 
 monitor:
-	airmon-ng check kill
-	airmon-ng start wlan0
+	# airmon-ng check kill
+	airmon-ng start wlan1
 
 capture: monitor
-	airodump-ng wlan0mon -w demo --manufacturer
+	airodump-ng wlan1mon -w demo --manufacturer
 
 stop:
-	airmon-ng stop wlan0mon
+	airmon-ng stop wlan1mon
 	systemctl restart network-manager.service
 
 all.txt:
