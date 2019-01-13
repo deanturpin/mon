@@ -1,21 +1,18 @@
 all: capture
 
-crack: all.txt
-	aircrack-ng demo.cap -w $<
+INTERFACE=wlan1
 
-merge:
-	rm -f all.cap
-	mergecap -F pcap *.cap -w all.cap	
+crack: all.txt
+	aircrack-ng *.cap -w $<
 
 monitor:
-	# airmon-ng check kill
-	airmon-ng start wlan1
+	airmon-ng start $(INTERFACE)
 
 capture: monitor
-	airodump-ng wlan1mon -w demo --manufacturer
+	airodump-ng $(INTERFACE)mon -w demo --manufacturer
 
 stop:
-	airmon-ng stop wlan1mon
+	airmon-ng stop $(INTERFACE)mon
 	systemctl restart network-manager.service
 
 all.txt:
