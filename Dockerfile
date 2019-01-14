@@ -1,8 +1,7 @@
-FROM kalilinux/kali-linux-docker
-RUN apt update
-RUN apt install -y wifi-honey
-RUN apt install -y make
-RUN apt install -y pciutils
+FROM alpine
+RUN apk add make
+RUN apk add aircrack-ng
+RUN apk add pciutils
 COPY . /src
 WORKDIR /src
-# CMD make
+CMD make
