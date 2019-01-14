@@ -5,4 +5,4 @@ RUN apt install -y make
 RUN apt install -y pciutils
 COPY . /src
 WORKDIR /src
-CMD make
+# CMD make
