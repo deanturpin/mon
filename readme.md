@@ -5,7 +5,7 @@ interface (wlan1). Make sure to run in prvileged. Ctrl-C to exit.
 docker run --net host --rm --privileged deanturpin/mon
 ```
 
-# Command line
+# Command line (clone)
 Run ```make``` to put wlan1 into promiscuous mode and start collecting.
 
 Run ```make crack``` to analyse the collection. Also fetches a word list.
