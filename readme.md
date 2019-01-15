@@ -11,7 +11,7 @@ Run ```make``` to put wlan1 into promiscuous mode and start collecting. Also fet
 
 Run ```make crack``` to analyse the collection.
 
-Assumes you're using a USB WiFi dongle. To use another interface pass an environment variable to make:
+Assumes you're using a USB WiFi dongle as a second network interface. To use another interface pass an environment variable to make:
 ```bash
 INTERFACE=wlan0 make
 ```
