@@ -1,8 +1,9 @@
 FROM alpine
-RUN apk add make
 RUN apk add aircrack-ng
 RUN apk add pciutils
-RUN airodump-ng-oui-update
 COPY . /src
 WORKDIR /src
-CMD make
+CMD \
+	airodump-ng-oui-update && \
+	airmon-ng start wlan1 && \
+	airodump-ng wlan1mon -w demo --manufacturer
