@@ -18,3 +18,6 @@ stop:
 all.txt:
 	curl https://mirrors.edge.kernel.org/openwall/wordlists/all.gz | gunzip > $@
 
+
+kill:
+	killall aircrack-ng -9
